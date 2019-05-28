@@ -1,0 +1,21 @@
+.Navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.link {
+    float: left;
+    border-right:1px solid #bbb;
+    color: #FFFFFF;
+}
+
+.link-last {
+    background-color: #333;
+    float: right;
+    color: #FFFFFF;
+}
+
+

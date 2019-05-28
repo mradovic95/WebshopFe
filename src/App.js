@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+
+import {BrowserRouter, Route} from 'react-router-dom';
+import LoginForm from './components/login_form/LoginForm';
+import AdminPanel from './components/admin_panel/AdminPanel';
+import UserPanel from './components/user_panel/UserPanel';
+import Navigation from './components/navigation/Navigation';
+import RegisterForm from './components/register_form/RegisterForm';
+import ShoopingCart from './components/shopping_cart/ShoppingCart';
+import UsersList from './components/users_list/UsersList';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+    render() {
+        console.log("App rendering ...");
+        return (
+            <BrowserRouter>
+                <div>
+                    <Navigation/>
+                    <switch>
+                        <Route path="/login" component={LoginForm}/>
+                        <Route path="/admin" component={AdminPanel}/>
+                        <Route path="/user" component={UserPanel}/>
+                        <Route path="/register" component={RegisterForm}/>
+                        <Route path="/shoopingCart" component={ShoopingCart}/>
+                        <Route path="/usersList" component={UsersList}/>
+                    </switch>
+                </div>
+            </BrowserRouter>
+        );
+    }
+
 }
 
 export default App;
